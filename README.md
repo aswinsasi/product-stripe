@@ -9,7 +9,7 @@
 
 ## About Project
 
-To purchase a product directly and make payment using stripe casheir package
+To purchase a product directly and make payment using stripe laravel casheir package
 
 # Getting started
 
@@ -20,11 +20,11 @@ Please check the official laravel installation guide for server requirements bef
 
 Clone the repository
 
-    git clone git@github.com:gothinkster/laravel-realworld-example-app.git
+   git clone  https://github.com/aswinsasi/product-stripe.git
 
 Switch to the repo folder
 
-    cd laravel-realworld-example-app
+    cd product-stripe
 
 Install all the dependencies using composer
 
@@ -38,19 +38,31 @@ Generate a new application key
 
     php artisan key:generate
 
-Generate a new JWT authentication secret key
+Generate or add stripe test mode key in .env
 
-    php artisan jwt:generate
+    STRIPE_KEY=pk_test_51MI5ZvSI08QBz5l6PXnBYBzUnaebFjPiFNyzdzykgPHjuaLxviRn4hhf6WH7nlOupgASCXIi3srAFXj3QlcMw1OX00hzIuaVE8
+    STRIPE_SECRET=sk_test_51MI5ZvSI08QBz5l66QiiKVvuHY65W02e59o2VKAc4wDMJEJjlizJm2BCGQez4UpttGTAGs0hBmtnwLlw2JuvWTcG00mJnzpETf
 
 Run the database migrations (**Set the database connection in .env before migrating**)
 
     php artisan migrate
+    php artisan db:seed
+
+    //Or you can use following command to reset & recreate whole database
+    php artisan migrate:refresh --seed
 
 Start the local development server
 
     php artisan serve
 
 You can now access the server at http://localhost:8000
+
+
+Test Card details
+
+    Card Number: 4242 4242 4242 4242
+    Card Expiry Date: Any future date
+    Card CVV Number: Any 3 digits
 
 ## License
 
